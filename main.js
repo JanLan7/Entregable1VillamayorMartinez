@@ -43,22 +43,38 @@ function dejarPropina(){
 
 function principal(){
     let contraseñaUsuario = prompt("Antes de empezar. Cree una contraseña")
+    if (contraseñaUsuario === null){
+        alert("Operación cancelada. No se ha creado una contraseña."); return;
+    }
+
     let intentos = 0
     let maxIntentos = 4;
 
     while(intentos < maxIntentos){
-        let contraseña = prompt("Compruebe la contraseña"); 
+        let contraseña = prompt("Compruebe la contraseña");
+        if (contraseña === null) { alert("Operación cancelada."); 
+        return;
+        } 
         if(contraseña === contraseñaUsuario){
             alert("Contraseña correcta! has ingresado a la matrix 😎"); break;
         }else{
-            alert("La contraseña es incorrecta"); intentos++;
+            alert("La contraseña es incorrecta");
+            intentos++;
         }
     } 
     if (intentos === maxIntentos) { alert("Has excedido el número máximo de intentos.");
         return;
     }
     let nombre = prompt("ingrese su nombre");
+    if (nombre === null){ 
+        alert("Operación cancelada.");
+        return;
+    }
     let inicio = Number(prompt(`Hola! ${nombre}! En que puedo ayudarte hoy?\n1.Cita filosofica para el día de hoy\n2.Recomendacion de libros\n3.Un chistesin\n4.Recomendacion de discos`));
+    if (isNaN(inicio)){
+        alert("Operación cancelada. Tenia que ingresar un numero 😖");
+        return;
+        }
         switch(inicio){
             case 1:
             alert(citaFilosofica())
