@@ -72,7 +72,7 @@ function principal(){
     }
     let inicio = Number(prompt(`Hola! ${nombre}! En que puedo ayudarte hoy?\n1.Cita filosofica para el día de hoy\n2.Recomendacion de libros\n3.Un chistesin\n4.Recomendacion de discos`));
     if (isNaN(inicio)){
-        alert("Operación cancelada. Tenia que ingresar un numero 😖");
+        alert("Operación cancelada. Tenías que ingresar un numero nomas 💩");
         return;
         }
         switch(inicio){
