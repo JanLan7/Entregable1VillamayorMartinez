@@ -81,7 +81,7 @@ function principal(){
     }
     let seguir = true
     while (seguir){
-        let inicio = Number(prompt(`Hola! ${nombre}!\n Elegí una de las opciones del 1 al 4\n1.Cita filosofica para el día de hoy\n2.Recomendacion de libros\n3.Un chistesin\n4.Recomendacion de discos`));
+        let inicio = Number(prompt(`Hola! ${nombre}!\nElegí una de las opciones del 1 al 4\n1. Cita filosofica para el día de hoy\n2. Recomendacion de libros\n3. Un chistesin\n4. Recomendacion de discos`));
     if (isNaN(inicio)){
         alert("Operación cancelada. Tenías que ingresar un numero nomas 💩");
         seguir = confirm("Queres ver el menu de vuelta?");
