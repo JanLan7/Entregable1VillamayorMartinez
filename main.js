@@ -27,7 +27,11 @@ function dejarPropina(){
     let siGusto = confirm("Desearía dejar alguna propina al programador?😁")
     if(siGusto){
         let cuanto = Number(prompt("Cuanto le gustaría dar?:"))
-        alert("Gracias 🤗")
+        if(cuanto <= 0){
+            alert("Tacaño/a 😛");
+        }else{
+            alert("Gracias 😀")
+        }
     }else{
         alert("No hay problema 😅.Nos vemos!")
     }
