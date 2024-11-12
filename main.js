@@ -31,8 +31,12 @@ function dejarPropina(){
             alert("Tacaño/a 😛");
         }else if(cuanto >=1 && cuanto <= 30){
             alert("Tacaño pero generoso 😛")
-        }else{
-            alert("Gracias 😁")
+        }else if (isNaN(cuanto)){
+            alert("Operación cancelada. Tenías que ingresar un numero nomas 💩");
+        }else if(cuanto > 30 && cuanto < 100){
+            alert("Muchas Gracias por el aporte 😁")
+        }else if(cuanto > 100){
+            alert("Gracias Sr millonario 🤑😜")
         }
     }else{
         alert("No hay problema 😒.Nos vemos!")
@@ -109,7 +113,7 @@ function principal(){
             seguir = confirm("Queres ver el menu de vuelta?")
             break
         default:
-            alert("Opcion no valida")
+            alert("Opcion no valida. Tenes que ingresar un numero del UNO AL CUA TRO 😫")
             seguir = confirm("Queres ver el menu de vuelta?")
             break;
     }   
