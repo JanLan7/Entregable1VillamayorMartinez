@@ -23,8 +23,6 @@ function discosSeleccion(){
 }
 
 //El programa arranca pidiendo al usuario crear una contraseña antes de arrancar
-
-
 //el programa pide que ingrese un nombre para nombrarle y darle las opciones de lo que puede hacer
 
 function principal(){
