@@ -26,22 +26,21 @@ function discosSeleccion(){
 function dejarPropina(){
     let siGusto = confirm("Desearía dejar alguna propina al programador?😁")
     if(siGusto){
-        let cuanto = Number(prompt("Cuanto le gustaría dar?:"))
+        let cuanto = Number(prompt("Cuantos $ le gustaría dar?:"))
         if(cuanto <= 0){
             alert("Tacaño/a 😛");
+        }else if(cuanto >=1 && cuanto <= 30){
+            alert("Tacaño pero generoso 😛")
         }else{
-            alert("Gracias 😀")
+            alert("Gracias 😁")
         }
     }else{
-        alert("No hay problema 😅.Nos vemos!")
+        alert("No hay problema 😒.Nos vemos!")
     }
     
 }
-
-//El programa arranca pidiendo al usuario crear una contraseña antes de arrancar
-//el programa pide que ingrese un nombre para nombrarle y darle las opciones de lo que puede hacer
-
-function principal(){
+//Funcion contraseña
+function pedirContraseña(){
     let contraseñaUsuario = prompt("Antes de empezar. Cree una contraseña")
     if (contraseñaUsuario === null){
         alert("Operación cancelada. No se ha creado una contraseña."); return;
@@ -65,40 +64,57 @@ function principal(){
     if (intentos === maxIntentos) { alert("Has excedido el número máximo de intentos.");
         return;
     }
-    let nombre = prompt("ingrese su nombre");
+    
+    
+}
+
+//El programa arranca pidiendo al usuario crear una contraseña antes de arrancar
+//el programa pide que ingrese un nombre para nombrarle y darle las opciones de lo que puede hacer
+
+function principal(){
+    pedirContraseña();
+
+    let nombre = prompt("Ingrese su nombre");
     if (nombre === null){ 
         alert("Operación cancelada.");
         return;
     }
-    let inicio = Number(prompt(`Hola! ${nombre}! En que puedo ayudarte hoy?\n1.Cita filosofica para el día de hoy\n2.Recomendacion de libros\n3.Un chistesin\n4.Recomendacion de discos`));
+    let seguir = true
+    while (seguir){
+        let inicio = Number(prompt(`Hola! ${nombre}! En que puedo ayudarte el día de hoy?\n Elegí una de las opciones del 1 al 4\n1.Cita filosofica para el día de hoy\n2.Recomendacion de libros\n3.Un chistesin\n4.Recomendacion de discos`));
     if (isNaN(inicio)){
         alert("Operación cancelada. Tenías que ingresar un numero nomas 💩");
-        return;
+        seguir = confirm("Queres ver el menu de vuelta?");
+        continue;
         }
         switch(inicio){
             case 1:
             alert(citaFilosofica())
-            alert("Adios pequeño saltamontes 🤸‍♂️")
-            dejarPropina();
+            alert("Espero que esto te haya hecho reflexionar 😌")
+            seguir = confirm("Queres ver el menu de vuelta?")
             break
         case 2:
             alert(librosSeleccion())
-            alert("Adios.Espero tus comentarios del libro 🤸‍♂️")
-            dejarPropina();
+            alert("Espero tus comentarios del libro 🤸‍♂️")
+            seguir = confirm("Queres ver el menu de vuelta?")
             break
         case 3:
             alert(chistesSeleccion())
             alert(" 🤣 🤸‍♂️")
-            dejarPropina();
+            seguir = confirm("Queres ver el menu de vuelta?")
             break
         case 4:
             alert(discosSeleccion())
             alert("Espero tus comentarios del disco 😎")
-            dejarPropina();
+            seguir = confirm("Queres ver el menu de vuelta?")
             break
         default:
             alert("Opcion no valida")
+            seguir = confirm("Queres ver el menu de vuelta?")
             break;
+    }   
     }
+    dejarPropina();
+    alert("Adios pequeño saltamontes 🤸‍♂️") 
 }
 principal();
