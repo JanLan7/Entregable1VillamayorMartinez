@@ -22,6 +22,18 @@ function discosSeleccion(){
     let indiceAleatorio = Math.floor(Math.random() * reseñasDeDiscos.length); return reseñasDeDiscos[indiceAleatorio]; 
 }
 
+//Funcion dejar propina
+function dejarPropina(){
+    let siGusto = confirm("Desearía dejar alguna propina al programador?😁")
+    if(siGusto){
+        let cuanto = Number(prompt("Cuanto le gustaría dar?:"))
+        alert("Gracias 🤗")
+    }else{
+        alert("No hay problema 😅.Nos vemos!")
+    }
+    
+}
+
 //El programa arranca pidiendo al usuario crear una contraseña antes de arrancar
 //el programa pide que ingrese un nombre para nombrarle y darle las opciones de lo que puede hacer
 
@@ -47,18 +59,22 @@ function principal(){
             case 1:
             alert(citaFilosofica())
             alert("Adios pequeño saltamontes 🤸‍♂️")
+            dejarPropina();
             break
         case 2:
             alert(librosSeleccion())
             alert("Adios.Espero tus comentarios del libro 🤸‍♂️")
+            dejarPropina();
             break
         case 3:
             alert(chistesSeleccion())
             alert(" 🤣 🤸‍♂️")
+            dejarPropina();
             break
         case 4:
             alert(discosSeleccion())
             alert("Espero tus comentarios del disco 😎")
+            dejarPropina();
             break
         default:
             alert("Opcion no valida")
